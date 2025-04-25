@@ -554,6 +554,6 @@ export function App() {
           <p className="text-xs mt-1">Powered by OrocareAI RLM</p>
         </footer>
       </div>
-    </div>
+        </div>
   );
 }

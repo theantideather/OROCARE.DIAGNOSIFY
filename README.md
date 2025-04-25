@@ -1,6 +1,6 @@
 # OrocareAI Diagnosify
 
-![OrocareAI Logo](public/orocare-logo.svg)
+![OrocareAI Logo](public/orocare-logo.png)
 
 A dental diagnosis AI application that analyzes dental images (X-rays, oral photos, and orthodontic images) to provide comprehensive dental assessments and treatment recommendations.
 
@@ -45,14 +45,8 @@ A dental diagnosis AI application that analyzes dental images (X-rays, oral phot
    ```bash
    cp .env.example .env
    ```
-
-4. Update your environment variables:
-   - For Gemini API: Get API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - For other services: Replace with your actual keys
-
-   ⚠️ **IMPORTANT: Never commit your real API keys to version control** ⚠️
    
-5. Start the development server:
+4. Start the development server:
    ```bash
    npm run dev
    ```
@@ -67,20 +61,7 @@ npm run build
 
 This project is configured for easy deployment on Netlify. Simply connect your GitHub repository to Netlify, and the application will be automatically deployed.
 
-1. Important: Set up environment variables in Netlify project settings. This includes:
-   - VITE_GEMINI_API_KEY
-   - Other environment variables as needed
-
-2. Deploy using the Netlify CLI or GitHub integration:
-
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/theantideather/OROCARE.DIAGNOSIFY)
-
-## Security
-
-- This project uses environment variables to manage sensitive API keys and credentials
-- The `.env` file is included in `.gitignore` to prevent accidental commits
-- Always rotate API keys if you suspect they've been exposed
-- Never include real API keys in `.env.example` files or commits
 
 ## License
 
