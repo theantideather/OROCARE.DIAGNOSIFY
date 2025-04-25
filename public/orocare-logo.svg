@@ -1,0 +1,39 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5F6D" />
+      <stop offset="100%" stop-color="#FFC371" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4158D0" />
+      <stop offset="100%" stop-color="#C850C0" />
+    </linearGradient>
+    <clipPath id="tooth-clip">
+      <path d="M100 150C125 150 135 120 135 95C135 70 125 50 100 50C75 50 65 70 65 95C65 120 75 150 100 150Z" />
+    </clipPath>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#gradient1)" />
+  
+  <!-- Inner Circle -->
+  <circle cx="100" cy="100" r="70" fill="white" fill-opacity="0.2" />
+  
+  <!-- Tooth Shape -->
+  <path d="M100 150C125 150 135 120 135 95C135 70 125 50 100 50C75 50 65 70 65 95C65 120 75 150 100 150Z" fill="white" />
+  
+  <!-- Scanning Line Animation -->
+  <rect x="65" y="70" width="70" height="60" fill="url(#gradient2)" clip-path="url(#tooth-clip)">
+    <animate attributeName="y" 
+      values="70;120;70" 
+      dur="3s" 
+      repeatCount="indefinite" 
+      begin="0s" />
+  </rect>
+  
+  <!-- Tooth Details -->
+  <path d="M100 150C105 140 110 130 115 95C115 80 110 70 100 70C90 70 85 80 85 95C90 130 95 140 100 150Z" fill="#4158D0" fill-opacity="0.2" />
+  
+  <!-- Text -->
+  <text x="100" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="white">OROCARE.AI</text>
+</svg> 

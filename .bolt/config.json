@@ -1,0 +1,14 @@
+{
+  "name": "PreBulls",
+  "version": "1.0.0",
+  "description": "AI-powered trading analysis platform",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/prebulls"
+  },
+  "features": {
+    "analysis": true,
+    "trading": true,
+    "community": true
+  }
+}

@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import custom styles */
+@import './styles/appStyles.css';
+
+/* Basic reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --arc-gradient-1: #FF5F6D;
+  --arc-gradient-2: #FFC371;
+  --arc-gradient-3: #4158D0;
+  --arc-gradient-4: #C850C0;
+  --arc-gradient-5: #FFCC70;
+  --macintosh-bg: rgba(245, 245, 247, 0.8);
+  --macintosh-border: rgba(0, 0, 0, 0.1);
+  --macintosh-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --backdrop-blur: 15px;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --bg-primary: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.dark {
+  --arc-gradient-1: #FF1B6B;
+  --arc-gradient-2: #FF930F;
+  --arc-gradient-3: #3F2DB7;
+  --arc-gradient-4: #9324AE;
+  --arc-gradient-5: #FFA427;
+  --macintosh-bg: rgba(30, 30, 32, 0.8);
+  --macintosh-border: rgba(255, 255, 255, 0.1);
+  --macintosh-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
+  --bg-primary: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(243, 244, 246, 0.8);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.6);
+}
+
+/* Apple-inspired UI classes */
+.mac-window {
+  background: var(--macintosh-bg);
+  border-radius: 12px;
+  box-shadow: var(--macintosh-shadow);
+  border: 1px solid var(--macintosh-border);
+  backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
+}
+
+.mac-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--macintosh-border);
+}
+
+.mac-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mac-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.mac-btn-close {
+  background-color: #ff5f57;
+}
+
+.mac-btn-minimize {
+  background-color: #febc2e;
+}
+
+.mac-btn-maximize {
+  background-color: #28c840;
+}
+
+/* Vibrant ARC browser inspired gradients */
+.arc-gradient-1 {
+  background: linear-gradient(135deg, var(--arc-gradient-1), var(--arc-gradient-2));
+}
+
+.arc-gradient-2 {
+  background: linear-gradient(135deg, var(--arc-gradient-3), var(--arc-gradient-4));
+}
+
+.arc-gradient-3 {
+  background: linear-gradient(135deg, var(--arc-gradient-4), var(--arc-gradient-5));
+}
+
+/* Vibrant glass morphism */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glassmorphism {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode text adjustments */
+.dark .text-gray-700,
+.dark .text-gray-800,
+.dark .text-gray-900 {
+  color: #e2e8f0 !important;
+}
+
+.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .bg-white,
+.dark .bg-white\/80 {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+.dark .bg-gray-50,
+.dark .bg-gray-50\/80 {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+}
+
+.dark .border {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}

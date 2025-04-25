@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic Page</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #2563eb;
+    }
+    .card {
+      padding: 16px;
+      margin: 16px 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background-color: #f9fafb;
+    }
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    #output {
+      white-space: pre-wrap;
+      font-family: monospace;
+      padding: 16px;
+      background-color: #1e293b;
+      color: #e2e8f0;
+      border-radius: 4px;
+      margin-top: 16px;
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>OrocareAI Diagnostic Page</h1>
+    <div class="card">
+      <h2>Browser Information</h2>
+      <div id="browser-info"></div>
+    </div>
+
+    <div class="card">
+      <h2>React Test</h2>
+      <div id="react-test"></div>
+      <button id="test-react">Test React Rendering</button>
+    </div>
+
+    <div class="card">
+      <h2>Console Output</h2>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <script>
+    // Display browser information
+    const browserInfoElement = document.getElementById('browser-info');
+    browserInfoElement.innerHTML = `
+      <p>User Agent: ${navigator.userAgent}</p>
+      <p>Platform: ${navigator.platform}</p>
+      <p>Cookies Enabled: ${navigator.cookieEnabled}</p>
+      <p>Language: ${navigator.language}</p>
+      <p>Window Size: ${window.innerWidth} x ${window.innerHeight}</p>
+    `;
+
+    // Redirect console output to the output element
+    const outputElement = document.getElementById('output');
+    const originalConsoleLog = console.log;
+    const originalConsoleError = console.error;
+    const originalConsoleWarn = console.warn;
+    
+    console.log = function(...args) {
+      outputElement.textContent += '> ' + args.join(' ') + '\n';
+      originalConsoleLog.apply(console, args);
+    };
+    console.error = function(...args) {
+      outputElement.textContent += 'ERROR: ' + args.join(' ') + '\n';
+      originalConsoleError.apply(console, args);
+    };
+    console.warn = function(...args) {
+      outputElement.textContent += 'WARN: ' + args.join(' ') + '\n';
+      originalConsoleWarn.apply(console, args);
+    };
+
+    // Test React rendering
+    document.getElementById('test-react').addEventListener('click', () => {
+      console.log('Testing React rendering...');
+      
+      try {
+        // Load React dynamically
+        const reactScript = document.createElement('script');
+        reactScript.src = 'https://unpkg.com/react@18/umd/react.development.js';
+        
+        const reactDomScript = document.createElement('script');
+        reactDomScript.src = 'https://unpkg.com/react-dom@18/umd/react-dom.development.js';
+        
+        reactScript.onload = () => {
+          document.body.appendChild(reactDomScript);
+        };
+        
+        reactDomScript.onload = () => {
+          // Create a simple React component
+          const container = document.getElementById('react-test');
+          const root = ReactDOM.createRoot(container);
+          
+          const element = React.createElement('div', { 
+            style: { 
+              padding: '16px', 
+              backgroundColor: '#4ade80', 
+              color: 'white',
+              borderRadius: '4px'
+            } 
+          }, 'React is working!');
+          
+          root.render(element);
+          console.log('React test completed successfully');
+        };
+        
+        document.body.appendChild(reactScript);
+      } catch (err) {
+        console.error('React test failed:', err);
+      }
+    });
+
+    // Log initialization
+    console.log('Diagnostic page loaded at: ' + new Date().toLocaleString());
+  </script>
+</body>
+</html> 

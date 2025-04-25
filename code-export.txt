@@ -1,0 +1,59 @@
+# Project Structure and Code Analysis
+
+## Project Overview
+This is a React-based trading application using Jupiter Protocol for Solana token swaps. The application includes:
+- Token selection and trading interface
+- Wallet integration (Phantom)
+- Chart analysis capabilities
+- Trade execution through Jupiter Protocol
+
+## Key Files and Components
+
+### Main Application Files
+\`\`\`typescript
+// src/App.tsx
+${fs.readFileSync('src/App.tsx', 'utf8')}
+\`\`\`
+
+### Trading Components
+\`\`\`typescript
+// src/components/Trading/TradingPanel.tsx
+${fs.readFileSync('src/components/Trading/TradingPanel.tsx', 'utf8')}
+
+// src/components/Trading/TokenSelect.tsx
+${fs.readFileSync('src/components/Trading/TokenSelect.tsx', 'utf8')}
+\`\`\`
+
+### Trading Services
+\`\`\`typescript
+// src/services/trading/jupiterService.ts
+${fs.readFileSync('src/services/trading/jupiterService.ts', 'utf8')}
+
+// src/services/trading/tradeExecutor.ts
+${fs.readFileSync('src/services/trading/tradeExecutor.ts', 'utf8')}
+\`\`\`
+
+### Types and Constants
+\`\`\`typescript
+// src/types/index.ts
+${fs.readFileSync('src/types/index.ts', 'utf8')}
+
+// src/services/trading/constants.ts
+${fs.readFileSync('src/services/trading/constants.ts', 'utf8')}
+\`\`\`
+
+## Environment Configuration
+\`\`\`
+VITE_GEMINI_API_KEY=${process.env.VITE_GEMINI_API_KEY}
+VITE_HELIUS_RPC_URL=${process.env.VITE_HELIUS_RPC_URL}
+\`\`\`
+
+## Questions for Analysis
+1. Code structure and organization
+2. Error handling and validation
+3. Security considerations
+4. Performance optimizations
+5. Integration points with Jupiter Protocol
+6. Wallet connection handling
+7. Token selection implementation
+8. Trade execution flow
